@@ -1,0 +1,10 @@
+name: Frame Protector
+version: 0.2
+author: lst96
+main: io.github.lst96.FrameProtector.FrameProtector
+commands:
+    framereload:
+        description: This command reloads the configuration file.
+permissions:
+    frame.remove:
+      default: op
