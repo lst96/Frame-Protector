@@ -25,11 +25,9 @@ public class FrameProtector extends JavaPlugin {
 	public void onEnable() {
 		pdfFile = this.getDescription();
 		PREFIX = "[" + pdfFile.getName() + "]";
-		this.logger.info(PREFIX + " Frame Protector version "
-				+ pdfFile.getVersion() + " has been enabled.");
+		this.logger.info(PREFIX + " Frame Protector version " + pdfFile.getVersion() + " has been enabled.");
 		this.logger.info(PREFIX + " Developed by: " + pdfFile.getAuthors());
-		getServer().getPluginManager().registerEvents(new ItemRemove(this),
-				this);
+		getServer().getPluginManager().registerEvents(new ItemRemove(this), this);
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		getCommand("framereload").setExecutor(new ItemReload(this));
@@ -45,8 +43,7 @@ public class FrameProtector extends JavaPlugin {
 			this.compatible = mcVersion.startsWith("1.7.2");
 			if ((this.getConfig().getBoolean("check_bukkit_compatibility"))
 					&& (!this.compatible)) {
-				this.logger.info("[Frame Protector] is not compatible with "
-						+ Bukkit.getVersion());
+				this.logger.info("[Frame Protector] is not compatible with " + Bukkit.getVersion());
 				getServer().getPluginManager().disablePlugin(this);
 				return;
 	}
@@ -55,10 +52,8 @@ public class FrameProtector extends JavaPlugin {
 	public void onDisable() {
 		this.logger.info(PREFIX + " Frame Protector Disabled.");
 	}
-	private void setupUpdater() {
-
-		Updater updater = new Updater(this, 57100, this.getFile(),
-				Updater.UpdateType.DEFAULT, true);
+	private void setupUpdater() {		
+		Updater updater = new Updater(this, 71125, this.getFile(), Updater.UpdateType.DEFAULT, true);
 		Updater.UpdateResult result = updater.getResult();
 		switch (result) {
 		case SUCCESS:
